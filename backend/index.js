@@ -16,10 +16,17 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
+// const corsOptions = {
+//     origin:'https://job-hunt-deploye.onrender.com',
+//     credentials:true
+// }
 const corsOptions = {
-    origin:'https://job-hunt-deploye.onrender.com',
-    credentials:true
-}
+    origin: 'https://job-hunt-deploye-froented.onrender.com', // your actual frontend URL
+    credentials: true
+  };
+  
+  app.use(cors(corsOptions));
+  
 
 app.use(cors(corsOptions));
 
